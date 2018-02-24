@@ -101,10 +101,12 @@ public class GroupAnnotationProcessor extends AbstractProcessor {
                 out.println();
             }
 
-            out.print("public class ");
+            // Write class declaration
+            out.print("public final class ");
             out.print(className);
             out.println(" {");
 
+            // Write call method
             out.println("    public static void call() {");
             for (Element e : called) {
                 String clazzPath = ((TypeElement)e.getEnclosingElement()).getQualifiedName().toString();
@@ -112,6 +114,11 @@ public class GroupAnnotationProcessor extends AbstractProcessor {
                 out.println("        " + clazzPath + "." + methodName + "();");
             }
             out.println("    }");
+
+            // Write private constructor
+            out.print("    private ");
+            out.print(className);
+            out.println(" (){}");
 
             out.println("}");
         }
