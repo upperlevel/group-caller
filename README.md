@@ -1,5 +1,5 @@
 # GroupCaller
-GroupCaller is a lightweight annotation processor that solves a simple tasks:
+GroupCaller is a lightweight annotation processor that solves a simple task:
 calling methods that aren't in a specific point in your application.
 <br>Sometimes you need some kind of initialization where a lot of methods need to be called,
 with the GroupCaller annotations you are able to define a list of methods to call without defining a method list.
